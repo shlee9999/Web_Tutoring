@@ -1,0 +1,9 @@
+.container{
+  max-width: 960px;
+}
+.card{
+  max-width: 300px;
+}
+.btn{
+  width: 100%;
+}
