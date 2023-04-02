@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Card({
   title,
@@ -10,6 +10,10 @@ function Card({
   color,
   buttonText,
 }) {
+  const [counter, setCounter] = useState(parseInt(cost));
+  const onIncrease = () => {
+    setCounter(counter + 1);
+  };
   return (
     <div className="card_custom">
       <div className="card_header">
@@ -17,7 +21,7 @@ function Card({
       </div>
       <div className="card_body">
         <h2>
-          <b>{cost}</b> <small>/ mo</small>
+          <b>${counter}</b> <small>/ mo</small>
         </h2>
         <ul>
           <li>{userNumber} users included</li>
@@ -25,7 +29,9 @@ function Card({
           <li>{support} support</li>
           <li>{access}Help center access</li>
         </ul>
-        <button className={`${color} card_button`}>{buttonText}</button>
+        <button onClick={onIncrease} className={`${color} card_button`}>
+          {buttonText}
+        </button>
       </div>
     </div>
   );
