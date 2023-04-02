@@ -22,9 +22,7 @@ function App() {
           <p>
             <a href="./">Pricing</a>
           </p>
-          <button className="btn btn-outline-primary" id="signupButton">
-            Sign up
-          </button>
+          <button id="signupButton">Sign up</button>
         </div>
       </div>
 
@@ -45,7 +43,7 @@ function App() {
         <Card
           title="Free"
           userNumber="10"
-          color="btn-outline-primary"
+          color="button2"
           cost="$0"
           storage="2"
           support="Email"
@@ -54,7 +52,7 @@ function App() {
         <Card
           title="Pro"
           userNumber="20"
-          color="btn-primary"
+          color="button1"
           cost="$15"
           storage="10"
           support="Priority email"
@@ -63,7 +61,7 @@ function App() {
         <Card
           title="Enterprise"
           userNumber="30"
-          color="btn-primary"
+          color="button1"
           cost="$29"
           storage="15"
           support="Priority email"
@@ -74,36 +72,64 @@ function App() {
       <footer>
         <div className="footerContainer">
           <div>
-            <img alt="icon"src="img/bootstrap-solid.svg"></img>
+            <img alt="icon" src="img/bootstrap-solid.svg"></img>
             <p>&#169;2017-2018</p>
           </div>
           <div>
             <b>Features</b>
             <ul>
-              <li><a href="./">Cool stuff</a></li>
-              <li><a href="./">Random feature</a></li>
-              <li><a href="./">Team feature</a></li>
-              <li><a href="./">Stuff for developers</a></li>
-              <li><a href="./">Another one</a></li>
-              <li><a href="./">Last time</a></li>
+              <li>
+                <a href="./">Cool stuff</a>
+              </li>
+              <li>
+                <a href="./">Random feature</a>
+              </li>
+              <li>
+                <a href="./">Team feature</a>
+              </li>
+              <li>
+                <a href="./">Stuff for developers</a>
+              </li>
+              <li>
+                <a href="./">Another one</a>
+              </li>
+              <li>
+                <a href="./">Last time</a>
+              </li>
             </ul>
           </div>
           <div>
             <b>Resources</b>
             <ul>
-              <li><a href="./">Resource</a></li>
-              <li><a href="./">Resource name</a></li>
-              <li><a href="./">Another resource</a></li>
-              <li><a href="./">Final resource</a></li>
+              <li>
+                <a href="./">Resource</a>
+              </li>
+              <li>
+                <a href="./">Resource name</a>
+              </li>
+              <li>
+                <a href="./">Another resource</a>
+              </li>
+              <li>
+                <a href="./">Final resource</a>
+              </li>
             </ul>
           </div>
           <div>
             <b>About</b>
             <ul>
-              <li><a href="./">Team</a></li>
-              <li><a href="./">Locations</a></li>
-              <li><a href="./">Privacy</a></li>
-              <li><a href="./">Terms</a></li>
+              <li>
+                <a href="./">Team</a>
+              </li>
+              <li>
+                <a href="./">Locations</a>
+              </li>
+              <li>
+                <a href="./">Privacy</a>
+              </li>
+              <li>
+                <a href="./">Terms</a>
+              </li>
             </ul>
           </div>
         </div>

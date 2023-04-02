@@ -1,43 +1,58 @@
-footer{
+body {
+  margin: 0 auto;
+  padding: 0;
+}
+footer {
   width: 780px;
   margin: 40px auto;
   padding: 0;
-  
 }
-.footerContainer{
+.footerContainer {
   margin: 40px auto;
   display: flex;
   column-gap: 20px;
 }
-
-footer ul{
+.button1 {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  height: 40px;
+}
+.button2 {
+  border: 1.5px solid #007bff;
+  color: #007bff;
+  background-color: white;
+  height: 40px;
+}
+footer ul {
   list-style: none;
   margin-top: 10px;
   padding: 0;
 }
-footer ul>li{
-  font-size: 10pt;
+footer ul > li {
+  margin-bottom: 2px;
+  font-size: 9pt;
 }
-footer a{
+footer a {
   color: #908c87;
 }
-.footerContainer>div{
+.footerContainer > div {
   width: 250px;
 }
-footer>div p{
+footer > div p {
   font-size: 8pt;
   padding: 0;
   margin: 0;
 }
-footer img{
+footer img {
   width: 20px;
   margin-bottom: 5px;
 }
 .header {
   width: 100%;
   height: 60px;
-  padding: 0 10px 0 20px;
-  margin-bottom: 40px;
+  padding: 0 20px;
+  margin: 0 auto 40px auto;
   border: 1px solid #ddd;
   box-shadow: 0px 0.1px 5px #ddd;
   display: flex;
@@ -45,16 +60,12 @@ footer img{
   align-items: center;
   text-align: center;
   flex-wrap: wrap;
-
-
 }
 
 .container {
-  max-width: 960px;
   text-align: center;
   width: 100%;
   padding: 10px;
-  margin-bottom: 30px;
 }
 
 .cardContainer {
@@ -63,8 +74,6 @@ footer img{
   text-align: center;
   display: flex;
   justify-content: space-between;
-
-
 }
 
 .card_custom {
@@ -77,29 +86,32 @@ footer img{
 #title {
   font-size: 35pt;
   font-weight: 100;
-
 }
 
 #linkBox {
   width: 350px;
-  font-size: 10pt;
+  font-size: 9.5pt;
   display: flex;
   justify-content: space-around;
   align-items: center;
   text-align: center;
+  margin-right: 25px;
 }
 
 #signupButton {
   font-size: 10pt;
   width: 65px;
+  height: 30px;
   padding: 5px 0;
   border-radius: 3.5px;
+  color: #007bff;
+  background-color: white;
+  border: 1.5px solid #007bff;
 }
 
 a {
   text-decoration: none;
   color: black;
-
 }
 
 a:hover {
@@ -108,6 +120,8 @@ a:hover {
 
 #bodyText {
   font-weight: 100;
+  color: #86888a;
+  line-height: 1.55;
 }
 
 p,
@@ -127,18 +141,22 @@ h4 {
   align-items: center;
 }
 
-.card_header h4 {
+.card_header p {
   font-size: 15pt;
 }
-
 
 .card_body {
   padding: 20px;
   font-size: 10pt;
+  line-height: 1.55;
 }
-
+.card_body b {
+  font-size: 25pt;
+}
 .card_body small {
-  color: #908c87;
+  color: #807d80;
+  font-size: 20pt;
+  font-weight: 400;
 }
 
 .card_body ul {

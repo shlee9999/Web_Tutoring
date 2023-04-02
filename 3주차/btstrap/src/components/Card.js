@@ -1,28 +1,34 @@
-import React, { Component } from "react";
-class Card extends Component {
-  render() {
-    return (
-      <div className="card_custom">
-        <div className="card_header">
-          <h4 id="card_header">{this.props.title}</h4>
-        </div>
-        <div className="card_body">
-          <h2>
-            <b>{this.props.cost}</b> <small>/ mo</small>
-          </h2>
-          <ul>
-            <li>{this.props.userNumber} users included</li>
-            <li>{this.props.storage} GB of storage</li>
-            <li>{this.props.support} support</li>
-            <li>{this.props.access}Help center access</li>
-          </ul>
-          <button className={`btn ${this.props.color} card_button`}>
-            {this.props.buttonText}
-          </button>
-        </div>
+import React from "react";
+
+function Card({
+  title,
+  cost,
+  userNumber,
+  storage,
+  support,
+  access,
+  color,
+  buttonText,
+}) {
+  return (
+    <div className="card_custom">
+      <div className="card_header">
+        <p id="card_header">{title}</p>
       </div>
-    );
-  }
+      <div className="card_body">
+        <h2>
+          <b>{cost}</b> <small>/ mo</small>
+        </h2>
+        <ul>
+          <li>{userNumber} users included</li>
+          <li>{storage} GB of storage</li>
+          <li>{support} support</li>
+          <li>{access}Help center access</li>
+        </ul>
+        <button className={`${color} card_button`}>{buttonText}</button>
+      </div>
+    </div>
+  );
 }
 
 export default Card;
