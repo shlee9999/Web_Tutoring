@@ -1,0 +1,54 @@
+.card {
+    width: 250px;
+    border: 1px solid #ddd;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+
+.card_header {
+    height: 45px;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_header p {
+    font-size: 15pt;
+}
+
+.card_body {
+    padding: 20px;
+    font-size: 10pt;
+    line-height: 1.55;
+}
+
+.card_body b {
+    font-size: 25pt;
+}
+
+.card_body small {
+    color: #807d80;
+    font-size: 20pt;
+    font-weight: 400;
+}
+
+.card_body ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.card_button {
+    font-size: 13pt;
+    font-weight: 200;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.card_button:hover {
+    filter: brightness(0.9);
+    cursor: pointer;
+}

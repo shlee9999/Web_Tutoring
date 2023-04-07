@@ -1,7 +1,61 @@
-import Card from "./components/Card";
+import Card from "./components/Card/index";
 import "./App.css";
-export default App;
 
+const cardData = [
+  {
+    title: "Free",
+    userNumber: "10",
+    color: "button2",
+    cost: "0",
+    storage: "2",
+    support: "Email",
+    buttonText: "Sign up for free",
+  },
+  {
+    title: "Pro",
+    userNumber: "20",
+    color: "button1",
+    cost: "15",
+    storage: "10",
+    support: "Priority email",
+    buttonText: "Get started",
+  },
+  {
+    title: "Enterprise",
+    userNumber: "30",
+    color: "button1",
+    cost: "29",
+    storage: "15",
+    support: "Priority email",
+    buttonText: "Contact us",
+  },
+];
+
+const listData = [
+  {
+    title: `Features`,
+    content: [
+      `Cool stuff`,
+      `Team feature`,
+      `Stuff for developers`,
+      `Another one`,
+      `Last time`,
+    ],
+  },
+  {
+    title: `Resources`,
+    content: [
+      `Resource`,
+      `Resource name`,
+      `Another resource`,
+      `Final resource`,
+    ],
+  },
+  {
+    title: `About`,
+    content: [`Team`, `Locations`, `Privacy`, `Terms`],
+  },
+];
 function App() {
   return (
     <div className="App">
@@ -9,26 +63,18 @@ function App() {
         <div>
           <p>Company name</p>
         </div>
-        <div id="linkBox">
-          <p>
-            <a href="./">Features</a>
-          </p>
-          <p>
-            <a href="./">Exterprise</a>
-          </p>
-          <p>
-            <a href="./">Support</a>
-          </p>
-          <p>
-            <a href="./">Pricing</a>
-          </p>
-          <button id="signupButton">Sign up</button>
+        <div class="link_box">
+          <p className="link_list">Features</p>
+          <p className="link_list">Exterprise</p>
+          <p className="link_list">Support</p>
+          <p className="link_list">Pricing</p>
+          <button className="signup_button">Sign up</button>
         </div>
       </div>
 
       <div className="container">
         <p id="title">Pricing</p>
-        <p id="bodyText">
+        <p className="body_text">
           Quickly build an effective pricing table for your potential customers
           with this
           <br />
@@ -39,101 +85,37 @@ function App() {
         </p>
       </div>
 
-      <div className="cardContainer">
-        <Card
-          title="Free"
-          userNumber="10"
-          color="button2"
-          cost="0"
-          storage="2"
-          support="Email"
-          buttonText="Sign up for free"
-        ></Card>
-        <Card
-          title="Pro"
-          userNumber="20"
-          color="button1"
-          cost="15"
-          storage="10"
-          support="Priority email"
-          buttonText="Get started"
-        ></Card>
-        <Card
-          title="Enterprise"
-          userNumber="30"
-          color="button1"
-          cost="29"
-          storage="15"
-          support="Priority email"
-          buttonText="Contact us"
-        ></Card>
+      <div className="card_container">
+        {cardData.map((cardItem, index) => (
+          <Card {...cardItem} key={`card_item_${index}`}></Card>
+        ))}
       </div>
       <hr />
       <footer>
-        <div className="footerContainer">
+        <div className="footer_container">
           <div>
             <img alt="icon" src="img/bootstrap-solid.svg"></img>
             <p>&#169;2017-2018</p>
           </div>
-          <div>
-            <b>Features</b>
-            <ul>
-              <li>
-                <a href="./">Cool stuff</a>
-              </li>
-              <li>
-                <a href="./">Random feature</a>
-              </li>
-              <li>
-                <a href="./">Team feature</a>
-              </li>
-              <li>
-                <a href="./">Stuff for developers</a>
-              </li>
-              <li>
-                <a href="./">Another one</a>
-              </li>
-              <li>
-                <a href="./">Last time</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <b>Resources</b>
-            <ul>
-              <li>
-                <a href="./">Resource</a>
-              </li>
-              <li>
-                <a href="./">Resource name</a>
-              </li>
-              <li>
-                <a href="./">Another resource</a>
-              </li>
-              <li>
-                <a href="./">Final resource</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <b>About</b>
-            <ul>
-              <li>
-                <a href="./">Team</a>
-              </li>
-              <li>
-                <a href="./">Locations</a>
-              </li>
-              <li>
-                <a href="./">Privacy</a>
-              </li>
-              <li>
-                <a href="./">Terms</a>
-              </li>
-            </ul>
-          </div>
+
+          {listData.map((value, index) => (
+            <div>
+              <b key={`title_${index}`}>{value.title}</b>
+              <ul>
+                {value.content.map((value2, index2) => (
+                  <li
+                    className="link_list"
+                    key={`list${index}_content${index2}`}
+                  >
+                    {value2}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </footer>
     </div>
   );
 }
+export default App;

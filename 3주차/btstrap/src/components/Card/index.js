@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import "./index.css";
 
-function Card({
+const Card = ({
   title,
   cost,
   userNumber,
@@ -9,13 +10,19 @@ function Card({
   access,
   color,
   buttonText,
-}) {
+}) => {
+  const dataList = [
+    `${userNumber} users included`,
+    `${storage} GB of storage`,
+    `${support} support`,
+    `${access}Help center access`,
+  ];
   const [counter, setCounter] = useState(parseInt(cost));
   const onIncrease = () => {
-    setCounter(counter + 1);
+    setCounter((prev) => prev + 1);
   };
   return (
-    <div className="card_custom">
+    <div className="card">
       <div className="card_header">
         <p id="card_header">{title}</p>
       </div>
@@ -24,10 +31,9 @@ function Card({
           <b>${counter}</b> <small>/ mo</small>
         </h2>
         <ul>
-          <li>{userNumber} users included</li>
-          <li>{storage} GB of storage</li>
-          <li>{support} support</li>
-          <li>{access}Help center access</li>
+          {dataList.map((value, index) => (
+            <li key={`data_item_${index}`}>{value}</li>
+          ))}
         </ul>
         <button onClick={onIncrease} className={`${color} card_button`}>
           {buttonText}
@@ -35,6 +41,6 @@ function Card({
       </div>
     </div>
   );
-}
+};
 
 export default Card;

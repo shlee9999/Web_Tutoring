@@ -1,13 +1,14 @@
 body {
   margin: 0 auto;
   padding: 0;
+  overflow-x: hidden;
 }
 footer {
   width: 780px;
   margin: 40px auto;
   padding: 0;
 }
-.footerContainer {
+.footer_container {
   margin: 40px auto;
   display: flex;
   column-gap: 20px;
@@ -36,7 +37,7 @@ footer ul > li {
 footer a {
   color: #908c87;
 }
-.footerContainer > div {
+.footer_container > div {
   width: 250px;
 }
 footer > div p {
@@ -68,7 +69,7 @@ footer img {
   padding: 10px;
 }
 
-.cardContainer {
+.card_container {
   margin: 0 auto;
   width: 800px;
   text-align: center;
@@ -76,19 +77,14 @@ footer img {
   justify-content: space-between;
 }
 
-.card_custom {
-  width: 250px;
-  border: 1px solid #ddd;
-  margin: 0 10px;
-  border-radius: 5px;
-}
+
 
 #title {
   font-size: 35pt;
   font-weight: 100;
 }
 
-#linkBox {
+.link_box {
   width: 350px;
   font-size: 9.5pt;
   display: flex;
@@ -98,7 +94,7 @@ footer img {
   margin-right: 25px;
 }
 
-#signupButton {
+.signup_button {
   font-size: 10pt;
   width: 65px;
   height: 30px;
@@ -109,16 +105,14 @@ footer img {
   border: 1.5px solid #007bff;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
 
-a:hover {
+
+.link_list:hover{
   text-decoration: underline;
+  cursor: pointer;
 }
 
-#bodyText {
+.body_text {
   font-weight: 100;
   color: #86888a;
   line-height: 1.55;
@@ -132,49 +126,6 @@ h4 {
   margin: 0;
 }
 
-.card_header {
-  height: 45px;
-  background-color: #f7f7f7;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card_header p {
-  font-size: 15pt;
-}
-
-.card_body {
-  padding: 20px;
-  font-size: 10pt;
-  line-height: 1.55;
-}
-.card_body b {
-  font-size: 25pt;
-}
-.card_body small {
-  color: #807d80;
-  font-size: 20pt;
-  font-weight: 400;
-}
-
-.card_body ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 15px 0;
-}
-
-.card_button {
-  font-size: 13pt;
-  font-weight: 200;
-  width: 100%;
-  border-radius: 5px;
-}
-.card_button:hover {
-  filter: brightness(0.9);
-  cursor: pointer;
-}
 
 hr {
   margin: 60px auto 40px auto;
