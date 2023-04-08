@@ -3,21 +3,28 @@ import { useState } from "react";
 import TodoItem from "./components/TodoItem/index";
 function App() {
   const [tasks, setTasks] = useState([]);
+
   const onClickCreate = () => {
-    console.log(tasks);
+    if (tasks.length === 0) {
+      document.querySelector(".delete_all").style.visibility = "visible";
+    }
     const item = document.querySelector(".input_text");
     const t = item.value;
     setTasks(() => [...tasks, t]);
-
     item.value = null;
   };
 
   const onClickDelete = (id) => {
     setTasks((prev) => prev.filter((value, index) => parseInt(id) !== index));
+    if (tasks.length === 1) {
+      //비동기처리때문에 1로해야 하는듯
+      document.querySelector(".delete_all").style.visibility = "hidden";
+    }
   };
 
   const onClickDeleteAll = (id) => {
     setTasks((prev) => []);
+    document.querySelector(".delete_all").style.visibility = "hidden";
   };
 
   const handleOnKeyPress = (e) => {

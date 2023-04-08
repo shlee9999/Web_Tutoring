@@ -88,6 +88,7 @@
     width: 595px;
     font-size: 8pt;
     margin-top: 10px;
+    visibility: hidden;
 }
 
 .delete_all:hover{

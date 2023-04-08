@@ -32,7 +32,6 @@ const TodoItem = ({ text, index, setTasks }) => {
         <button
           className="edit_button"
           onClick={() => {
-            // console.log(task);
             const input = document.querySelector(`#input_text_${index}`);
             const new_input = document.createElement("input");
             input.appendChild(new_input);
