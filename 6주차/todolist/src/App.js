@@ -12,7 +12,6 @@ function App() {
       checkedItems.delete(id);
       setCheckedItems(checkedItems);
     }
-    // console.log(checkedItems);
   };
   const onClickCreate = () => {
     if (tasks.length === 0) {
@@ -51,6 +50,7 @@ function App() {
 
   const onClickDeleteAll = (id) => {
     setTasks((prev) => []);
+    setCheckedItems((prev) => new Set());
     document.querySelector(".delete_all").style.visibility = "hidden";
   };
 
@@ -89,7 +89,6 @@ function App() {
             <TodoItem
               setTasks={setTasks}
               key={`item_${index}`}
-              index={`${index}`}
               task={item}
               checkedItemHandler={checkedItemHandler}
             ></TodoItem>

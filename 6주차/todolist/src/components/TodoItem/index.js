@@ -6,11 +6,23 @@ const TodoItem = ({ task, setTasks, checkedItemHandler }) => {
     setChecked(!bChecked);
     checkedItemHandler(parseInt(task.id), target.checked);
   };
+  const onClickEditButton = (e) => {
+    const input = document.querySelector(`#input_text_${task.id}`);
+    const new_input = document.createElement("input");
+    input.appendChild(new_input);
+    new_input.value = input.textContent;
+    new_input.className = "editor";
+    new_input.focus();
+  };
   const handleOnKeyPress = (e) => {
     if (e.key === "Enter") {
       const new_input = document.querySelector(".editor");
       setTasks((prev) => {
-        prev[task.id] = new_input.value;
+        prev.forEach((element) => {
+          if (element.id === task.id) {
+            element.text = new_input.value;
+          }
+        });
         return [...prev];
       });
       new_input.remove();
@@ -41,17 +53,7 @@ const TodoItem = ({ task, setTasks, checkedItemHandler }) => {
         </p>
       </div>
       <div className="button_container">
-        <button
-          className="edit_button"
-          onClick={(e) => {
-            const input = document.querySelector(`#input_text_${task.id}`);
-            const new_input = document.createElement("input");
-            input.appendChild(new_input);
-            new_input.value = input.textContent;
-            new_input.className = "editor";
-            new_input.focus();
-          }}
-        >
+        <button className="edit_button" onClick={onClickEditButton}>
           Edit
         </button>
         <button id={`${task.id}`} className="delete_button">
