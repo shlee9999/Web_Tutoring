@@ -1,38 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 .App {
-  text-align: center;
+    background-color: blanchedalmond;
+    height: 800px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.logo{
+    font-size: 70pt;
+    margin-top: 50px;
+    color: #555;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form{
+    position: relative;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.submit_container {
+    position: relative;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.task_container{
+    position:absolute;
+    top: 56px;
+    background-color: whitesmoke;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: #999 5px 5px 10px;
+}
+.item_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    border-radius: 10px;
+    width: 600px;
+    
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.input_text {
+    padding-left: 10px;
+    width: 540px;
+    height: 46px;
+    border: none;
+    display: flex;
+    align-items: center;
+    display: block;
+}
+.input_text:focus{
+    outline: none;
 }
 
-.App-link {
-  color: #61dafb;
+
+.submit_button {
+    text-decoration: none;
+    margin-right: 1px;
+    width: 60px;
+    height: 46px;
+    border-radius: 10px;
+    background-color: yellowgreen;
+    color: white;
+    border: 1px solid #ccc;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.submit_button:hover{
+    filter: brightness(0.9);
+    cursor: pointer;
 }
+.submit_button:active{
+    filter: brightness(0.8);
+}
+
+.submit_button:focus{
+    outline: none;
+}
+
+.delete_button {
+    margin-right: 2px;
+    width: 60px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: pink;
+    color: white;
+    border: none;
+}
+.delete_button:hover{
+    filter: brightness(0.9);
+    cursor: pointer;
+}
+
+.delete_button:active{
+    filter: brightness(0.8);
+}
+
+.delete_button:focus{
+    outline: none;
+}
+

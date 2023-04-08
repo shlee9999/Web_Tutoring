@@ -1,0 +1,71 @@
+.item{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    border-radius: 10px;
+    height: 46px;
+    width: 600px;
+    padding-left: 12px;
+}
+
+
+.delete_button {
+    margin-right: 2px;
+    width: 60px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: pink;
+    color: white;
+    border: none;
+}
+.delete_button:hover{
+    filter: brightness(0.9);
+    cursor: pointer;
+}
+
+.delete_button:active{
+    filter: brightness(0.8);
+}
+
+.delete_button:focus{
+    outline: none;
+}
+.edit_button {
+    margin-right: 2px;
+    width: 60px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: skyblue;
+    color: white;
+    border: none;
+}
+.edit_button:hover{
+    filter: brightness(0.9);
+    cursor: pointer;
+}
+
+.edit_button:active{
+    filter: brightness(0.8);
+}
+
+.edit_button:focus{
+    outline: none;
+}
+
+.text{
+    position: relative;
+    font-size: 12pt;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.editor{
+    text-decoration: none;
+    position: absolute;
+    background-color: whitesmoke;
+    border: none;
+    font-size: 12pt;
+    left: 0;
+}
