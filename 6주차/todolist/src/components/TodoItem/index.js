@@ -1,9 +1,9 @@
-import { useState } from "react";
 import "./index.css";
 const TodoItem = ({ text, index, setTasks }) => {
   const handleOnKeyPress = (e) => {
     if (e.key === "Enter") {
       const new_input = document.querySelector(".editor");
+
       setTasks((prev) => {
         prev[index] = new_input.value;
         return [...prev];
@@ -26,12 +26,13 @@ const TodoItem = ({ text, index, setTasks }) => {
       id={`item_${index}`}
     >
       <p className="text" id={`input_text_${index}`}>
-        {text}
+        {`${text}`}
       </p>
       <div className="button_container">
         <button
           className="edit_button"
           onClick={() => {
+            // console.log(task);
             const input = document.querySelector(`#input_text_${index}`);
             const new_input = document.createElement("input");
             input.appendChild(new_input);

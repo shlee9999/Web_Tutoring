@@ -40,22 +40,16 @@
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: #999 5px 5px 10px;
+    text-align: right;
 }
-.item_container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-    border-radius: 10px;
-    width: 600px;
-    
-}
+
 
 
 .input_text {
     padding-left: 10px;
     width: 540px;
     height: 46px;
+    font-size: 15pt;
     border: none;
     display: flex;
     align-items: center;
@@ -89,25 +83,13 @@
     outline: none;
 }
 
-.delete_button {
-    margin-right: 2px;
-    width: 60px;
-    height: 36px;
-    border-radius: 10px;
-    background-color: pink;
-    color: white;
-    border: none;
-}
-.delete_button:hover{
-    filter: brightness(0.9);
-    cursor: pointer;
+.delete_all{
+    position: absolute;
+    width: 595px;
+    font-size: 8pt;
+    margin-top: 10px;
 }
 
-.delete_button:active{
-    filter: brightness(0.8);
+.delete_all:hover{
+    cursor: default;
 }
-
-.delete_button:focus{
-    outline: none;
-}
-

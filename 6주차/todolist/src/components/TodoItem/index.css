@@ -69,3 +69,7 @@
     font-size: 12pt;
     left: 0;
 }
+.editor:focus{
+    outline: none;
+}
+

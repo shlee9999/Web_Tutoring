@@ -4,14 +4,20 @@ import TodoItem from "./components/TodoItem/index";
 function App() {
   const [tasks, setTasks] = useState([]);
   const onClickCreate = () => {
+    console.log(tasks);
     const item = document.querySelector(".input_text");
-    console.log(item.value);
-    setTasks([...tasks, item.value]);
+    const t = item.value;
+    setTasks(() => [...tasks, t]);
+
     item.value = null;
   };
 
   const onClickDelete = (id) => {
     setTasks((prev) => prev.filter((value, index) => parseInt(id) !== index));
+  };
+
+  const onClickDeleteAll = (id) => {
+    setTasks((prev) => []);
   };
 
   const handleOnKeyPress = (e) => {
@@ -53,6 +59,9 @@ function App() {
               text={`${item}`}
             ></TodoItem>
           ))}
+          <p className="delete_all" onClick={onClickDeleteAll}>
+            모두 지우기
+          </p>
         </div>
       </div>
     </div>
