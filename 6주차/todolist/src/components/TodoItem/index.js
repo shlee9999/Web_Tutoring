@@ -1,9 +1,15 @@
+import { useState } from "react";
 import "./index.css";
-const TodoItem = ({ text, index, setTasks }) => {
+const TodoItem = ({ text, index, setTasks, checkedItemHandler }) => {
+  const [bChecked, setChecked] = useState(false);
+  const checkedHandler = ({ target }) => {
+    setChecked(!bChecked);
+    console.log(target);
+    checkedItemHandler(parseInt(index), target.checked);
+  };
   const handleOnKeyPress = (e) => {
     if (e.key === "Enter") {
       const new_input = document.querySelector(".editor");
-
       setTasks((prev) => {
         prev[index] = new_input.value;
         return [...prev];
@@ -25,9 +31,16 @@ const TodoItem = ({ text, index, setTasks }) => {
       className="item"
       id={`item_${index}`}
     >
-      <p className="text" id={`input_text_${index}`}>
-        {`${text}`}
-      </p>
+      <div className="left_box">
+        <input
+          type="checkbox"
+          checked={bChecked}
+          onChange={(e) => checkedHandler(e)}
+        ></input>
+        <p className="text" id={`input_text_${index}`}>
+          {`${text}`}
+        </p>
+      </div>
       <div className="button_container">
         <button
           className="edit_button"

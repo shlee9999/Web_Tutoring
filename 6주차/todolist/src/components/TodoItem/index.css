@@ -59,6 +59,7 @@
     font-size: 12pt;
     text-decoration: none;
     background-color: transparent;
+    margin-left: 5px;
 }
 
 .editor{
@@ -73,3 +74,8 @@
     outline: none;
 }
 
+.left_box{
+    display: flex;
+
+    width:fit-content;
+}
