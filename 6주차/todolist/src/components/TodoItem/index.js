@@ -1,17 +1,16 @@
 import { useState } from "react";
 import "./index.css";
-const TodoItem = ({ text, index, setTasks, checkedItemHandler }) => {
+const TodoItem = ({ task, setTasks, checkedItemHandler }) => {
   const [bChecked, setChecked] = useState(false);
   const checkedHandler = ({ target }) => {
     setChecked(!bChecked);
-    console.log(target);
-    checkedItemHandler(parseInt(index), target.checked);
+    checkedItemHandler(parseInt(task.id), target.checked);
   };
   const handleOnKeyPress = (e) => {
     if (e.key === "Enter") {
       const new_input = document.querySelector(".editor");
       setTasks((prev) => {
-        prev[index] = new_input.value;
+        prev[task.id] = new_input.value;
         return [...prev];
       });
       new_input.remove();
@@ -21,7 +20,7 @@ const TodoItem = ({ text, index, setTasks, checkedItemHandler }) => {
     <div
       onKeyPress={handleOnKeyPress}
       onDoubleClick={() => {
-        const input = document.querySelector(`#input_text_${index}`);
+        const input = document.querySelector(`#input_text_${task.id}`);
         const new_input = document.createElement("input");
         input.appendChild(new_input);
         new_input.value = input.textContent;
@@ -29,7 +28,7 @@ const TodoItem = ({ text, index, setTasks, checkedItemHandler }) => {
         new_input.focus();
       }}
       className="item"
-      id={`item_${index}`}
+      id={`item_${task.id}`}
     >
       <div className="left_box">
         <input
@@ -37,15 +36,15 @@ const TodoItem = ({ text, index, setTasks, checkedItemHandler }) => {
           checked={bChecked}
           onChange={(e) => checkedHandler(e)}
         ></input>
-        <p className="text" id={`input_text_${index}`}>
-          {`${text}`}
+        <p className="text" id={`input_text_${task.id}`}>
+          {`${task.text}`}
         </p>
       </div>
       <div className="button_container">
         <button
           className="edit_button"
-          onClick={() => {
-            const input = document.querySelector(`#input_text_${index}`);
+          onClick={(e) => {
+            const input = document.querySelector(`#input_text_${task.id}`);
             const new_input = document.createElement("input");
             input.appendChild(new_input);
             new_input.value = input.textContent;
@@ -55,7 +54,7 @@ const TodoItem = ({ text, index, setTasks, checkedItemHandler }) => {
         >
           Edit
         </button>
-        <button id={`${index}`} className="delete_button">
+        <button id={`${task.id}`} className="delete_button">
           Delete
         </button>
       </div>

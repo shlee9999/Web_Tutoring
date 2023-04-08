@@ -12,7 +12,7 @@ function App() {
       checkedItems.delete(id);
       setCheckedItems(checkedItems);
     }
-    console.log(checkedItems);
+    // console.log(checkedItems);
   };
   const onClickCreate = () => {
     if (tasks.length === 0) {
@@ -22,19 +22,26 @@ function App() {
     const item = document.querySelector(".input_text");
 
     const t = item.value;
-    setTasks(() => [...tasks, t]);
+    setTasks(() => [
+      ...tasks,
+      {
+        text: t,
+        id: now,
+      },
+    ]);
     item.value = null;
   };
 
   const onClickDelete = (id) => {
-    setTasks((prev) => prev.filter((value, index) => parseInt(id) !== index));
-    for (let i = 0; i < checkedItems.length; i++) {
-      if (checkedItems[i] == id) {
-        checkedItems.delete(id);
-      } else if (checkedItems[i] > id) checkedItems[i]--;
-    }
-    setCheckedItems(checkedItems);
-    console.log(checkedItems);
+    setTasks((prev) =>
+      prev.filter((value, index) => parseInt(id) !== value.id)
+    );
+    setCheckedItems((prev) => {
+      if (prev.has(parseInt(id))) {
+        prev.delete(parseInt(id));
+      }
+      return prev;
+    });
 
     if (tasks.length === 1) {
       //비동기처리때문에 1로해야 하는듯
@@ -83,7 +90,7 @@ function App() {
               setTasks={setTasks}
               key={`item_${index}`}
               index={`${index}`}
-              text={`${item}`}
+              task={item}
               checkedItemHandler={checkedItemHandler}
             ></TodoItem>
           ))}
