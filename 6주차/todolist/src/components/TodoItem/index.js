@@ -46,7 +46,11 @@ const TodoItem = ({ task, setTasks, checkedItemHandler }) => {
         <input
           type="checkbox"
           checked={bChecked}
-          onChange={(e) => checkedHandler(e)}
+          onChange={(e) => {
+            checkedHandler(e);
+            const t = document.querySelector(`#input_text_${task.id}`);
+            t.classList.toggle("text_toggle");
+          }}
         ></input>
         <p className="text" id={`input_text_${task.id}`}>
           {`${task.text}`}

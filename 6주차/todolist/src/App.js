@@ -88,7 +88,7 @@ function App() {
           {tasks.map((item, index) => (
             <TodoItem
               setTasks={setTasks}
-              key={`item_${index}`}
+              key={`item_${item.id}`}
               task={item}
               checkedItemHandler={checkedItemHandler}
             ></TodoItem>

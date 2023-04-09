@@ -62,6 +62,10 @@
     margin-left: 5px;
 }
 
+.text_toggle{
+    text-decoration: line-through;
+}
+
 .editor{
     text-decoration: none;
     position: absolute;
@@ -76,6 +80,6 @@
 
 .left_box{
     display: flex;
-
     width:fit-content;
 }
+
