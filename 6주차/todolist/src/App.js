@@ -1,9 +1,12 @@
 import "./App.css";
 import { useState } from "react";
-import TodoItem from "./components/TodoItem/index";
+import TodoItem from "./components/TodoItem/index";
+
 function App() {
   const [tasks, setTasks] = useState([]);
   const [checkedItems, setCheckedItems] = useState(new Set());
+  const [inputValue, setInputValue] = useState(null);
+  const [deleteAllVisibility, setDeleteAllVisibility] = useState(false);
   const checkedItemHandler = (id, isChecked) => {
     if (isChecked) {
       checkedItems.add(id);
@@ -14,21 +17,16 @@ function App() {
     }
   };
   const onClickCreate = () => {
-    if (tasks.length === 0) {
-      document.querySelector(".delete_all").style.visibility = "visible";
-    }
+    if (tasks.length === 0) setDeleteAllVisibility(true);
     const now = new Date().getTime();
-    const item = document.querySelector(".input_text");
-
-    const t = item.value;
     setTasks(() => [
       ...tasks,
       {
-        text: t,
+        text: inputValue,
         id: now,
       },
     ]);
-    item.value = null;
+    setInputValue("");
   };
 
   const onClickDelete = (id) => {
@@ -43,15 +41,14 @@ function App() {
     });
 
     if (tasks.length === 1) {
-      //비동기처리때문에 1로해야 하는듯
-      document.querySelector(".delete_all").style.visibility = "hidden";
+      setDeleteAllVisibility(false);
     }
   };
 
   const onClickDeleteAll = (id) => {
-    setTasks((prev) => []);
-    setCheckedItems((prev) => new Set());
-    document.querySelector(".delete_all").style.visibility = "hidden";
+    setTasks([]);
+    setCheckedItems(new Set());
+    setDeleteAllVisibility(false);
   };
 
   const handleOnKeyPress = (e) => {
@@ -78,7 +75,9 @@ function App() {
           type="text"
           className="input_text"
           placeholder="할 일을 적으세요"
+          onChange={(e) => setInputValue(e.target.value)}
           onKeyPress={handleOnKeyPress}
+          value={inputValue}
         />
         <button type="button" onClick={onClickCreate} className="submit_button">
           Submit
@@ -93,9 +92,13 @@ function App() {
               checkedItemHandler={checkedItemHandler}
             ></TodoItem>
           ))}
-          <p className="delete_all" onClick={onClickDeleteAll}>
-            모두 지우기
-          </p>
+          {deleteAllVisibility ? (
+            <p className="delete_all" onClick={onClickDeleteAll}>
+              모두 지우기
+            </p>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>
