@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./index.css";
-const TodoItem = ({ task, checkedItemHandler }) => {
-  const [bChecked, setChecked] = useState(false);
+import { Link } from "react-router-dom";
+
+const TodoItem = ({ task }) => {
+  const [Checked, setChecked] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editText, setEditText] = useState(task.text);
-  const checkedHandler = ({ target }) => {
-    setChecked(!bChecked);
-    checkedItemHandler(parseInt(task.id), target.checked);
+  const checkedHandler = () => {
+    setChecked(!Checked);
   };
   const handleEdit = (e) => {
     setIsEditing(true);
@@ -16,29 +17,39 @@ const TodoItem = ({ task, checkedItemHandler }) => {
   };
   const handleOnKeyPress = (e) => {
     if (e.key === "Enter") {
-      // //input값을 저장해야 함
-      // setEditText(e.target.value); //여기 안에 변경된 input text 넣어주면 됨
       setIsEditing(false);
+      const item = JSON.parse(localStorage.getItem(task.id));
+      item.text = editText;
+      localStorage.setItem(task.id, JSON.stringify(item));
     }
   };
+  const onClickText = () => {
+    localStorage.setItem(`edit`, editText);
+    // console.log(localStorage.getItem(task.id));
+  };
+
+  useEffect(() => {
+    const item = JSON.parse(localStorage.getItem(task.id));
+    console.log(item.checked);
+    if (Checked === item.checked) return;
+    setChecked(item.checked);
+  }, []);
+
+  useEffect(() => {
+    const item = JSON.parse(localStorage.getItem(task.id));
+    item.checked = Checked;
+    localStorage.setItem(task.id, JSON.stringify(item));
+  }, [Checked, task.id]);
 
   return (
     <div
       onKeyPress={handleOnKeyPress}
       onDoubleClick={handleEdit}
-      className="item"
+      className={`item ${Checked ? "text_toggle" : ""}`}
       id={`item_${task.id}`}
     >
       <div className="left_box">
-        <input
-          type="checkbox"
-          checked={bChecked}
-          onChange={(e) => {
-            checkedHandler(e);
-            const t = document.querySelector(`#input_text_${task.id}`);
-            t.classList.toggle("text_toggle");
-          }}
-        />
+        <input type="checkbox" checked={Checked} onChange={checkedHandler} />
         {isEditing ? (
           <input
             type="text"
@@ -47,9 +58,13 @@ const TodoItem = ({ task, checkedItemHandler }) => {
             onChange={handleEditChange}
           />
         ) : (
-          <p className="text" id={`input_text_${task.id}`}>
+          <Link
+            to={`./details/${task.id}`}
+            className="text"
+            onClick={onClickText}
+          >
             {editText}
-          </p>
+          </Link>
         )}
       </div>
       <div className="button_container">

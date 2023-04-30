@@ -1,61 +1,79 @@
-import "./App.css";
-import { useState } from "react";
-import TodoItem from "./components/TodoItem/index";
+import "./Main.css";
+import { useEffect, useState } from "react";
+import TodoItem from "../../components/TodoItem/index";
 
-function App() {
+function Main() {
   const [tasks, setTasks] = useState([]);
-  const [checkedItems, setCheckedItems] = useState(new Set());
-  const [inputValue, setInputValue] = useState(null);
+  const [inputValue, setInputValue] = useState("");
   const [deleteAllVisibility, setDeleteAllVisibility] = useState(false);
-  const checkedItemHandler = (id, isChecked) => {
-    if (isChecked) {
-      checkedItems.add(id);
-      setCheckedItems(checkedItems);
-    } else if (!isChecked && checkedItems.has(id)) {
-      checkedItems.delete(id);
-      setCheckedItems(checkedItems);
-    }
-  };
+
   const onClickCreate = () => {
+    if (inputValue === "") return;
     if (tasks.length === 0) setDeleteAllVisibility(true);
     const now = new Date().getTime();
-    setTasks(() => [
-      ...tasks,
-      {
-        text: inputValue,
-        id: now,
-      },
-    ]);
+    const new_task = {
+      text: inputValue,
+      id: now,
+      checked: false,
+    };
+    setTasks(() => [...tasks, new_task]);
     setInputValue("");
+    localStorage.setItem(`${now}`, JSON.stringify(new_task));
+    const taskIds = JSON.parse(localStorage.getItem("taskIds") || "[]");
+    taskIds.push(now);
+    localStorage.setItem("taskIds", JSON.stringify(taskIds));
   };
 
   const onClickDelete = (id) => {
     setTasks((prev) =>
       prev.filter((value, index) => parseInt(id) !== value.id)
     );
-    setCheckedItems((prev) => {
-      if (prev.has(parseInt(id))) {
-        prev.delete(parseInt(id));
-      }
-      return prev;
-    });
-
+    console.log("id = " + id);
     if (tasks.length === 1) {
       setDeleteAllVisibility(false);
     }
+    const taskIds = JSON.parse(localStorage.getItem("taskIds"));
+    console.log("taskIds : " + taskIds);
+    localStorage.removeItem(parseInt(id));
+    for (let i = 0; i < taskIds.length; i++) {
+      console.log(i + ". " + id + " " + taskIds[i]);
+      console.log(typeof id);
+      console.log(typeof taskIds[i]);
+      if (taskIds[i] === parseInt(id)) {
+        console.log("삭제! id = " + id);
+        taskIds.splice(i, 1);
+        i--;
+      }
+    }
+    localStorage.setItem("taskIds", JSON.stringify(taskIds));
   };
 
-  const onClickDeleteAll = (id) => {
+  const onClickDeleteAll = () => {
     setTasks([]);
-    setCheckedItems(new Set());
+
     setDeleteAllVisibility(false);
+    localStorage.clear();
   };
 
   const handleOnKeyPress = (e) => {
     if (e.key === "Enter") {
       onClickCreate();
+      load_items();
     }
   };
+  const load_items = () => {
+    setTasks([]);
+    const taskIds = JSON.parse(localStorage.getItem("taskIds") || "[]");
+    for (let i = 0; i < taskIds.length; i++) {
+      const key = taskIds[i];
+      const value = JSON.parse(localStorage.getItem(key));
+      setTasks((prev) => [...prev, value]);
+    }
+  };
+  // localStorage.clear();
+  useEffect(() => {
+    load_items();
+  }, []);
 
   return (
     <div
@@ -68,7 +86,9 @@ function App() {
       onDoubleClick={(e) => {}}
     >
       <div>
-        <p className="logo">todolist</p>
+        <p className="logo" onClick={onClickDeleteAll}>
+          todolist
+        </p>
       </div>
       <div className="submit_container">
         <input
@@ -89,7 +109,6 @@ function App() {
               setTasks={setTasks}
               key={`item_${item.id}`}
               task={item}
-              checkedItemHandler={checkedItemHandler}
             ></TodoItem>
           ))}
           {deleteAllVisibility ? (
@@ -105,4 +124,4 @@ function App() {
   );
 }
 
-export default App;
+export default Main;

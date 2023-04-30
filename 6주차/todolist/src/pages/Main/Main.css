@@ -94,3 +94,7 @@
 .delete_all:hover{
     cursor: default;
 }
+
+:link{
+    color: black;
+}

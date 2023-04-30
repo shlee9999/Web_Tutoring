@@ -1,3 +1,4 @@
+
 .item{
     position: relative;
     display: flex;
@@ -9,7 +10,6 @@
     width: 600px;
     padding-left: 12px;
 }
-
 
 .delete_button {
     margin-right: 2px;
@@ -62,10 +62,6 @@
     margin-left: 5px;
 }
 
-.text_toggle{
-    text-decoration: line-through;
-}
-
 .editor{
     text-decoration: none;
     position: absolute;
@@ -83,3 +79,14 @@
     width:fit-content;
 }
 
+.text_toggle{
+    text-decoration: line-through;
+}
+
+.text:hover{
+    cursor:pointer;
+}
+
+:visited{
+    color: black;
+}

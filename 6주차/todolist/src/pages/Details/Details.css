@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.Details {
+    background-color: blanchedalmond;
+    height: 800px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo{
+    font-size: 70pt;
+    margin-top: 50px;
+    color: #555;
+}
+
+.details_container{
+    position: relative;
+    padding: 20px 30px;
+    width: 500px;
+    height: 200px;
+    background-color: whitesmoke;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: #999 5px 5px 10px;
+}
+
+
+
+.details_text{
+    margin-top: 20px;
+    font-size: 15pt;
+
+}
+
+.details_button_container{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.details_editor{
+    text-decoration: none;
+    position: absolute;
+    background-color: whitesmoke;
+    border: none;
+    left: 30px;
+    width: 500px;
+}
+.details_editor:focus{
+    outline: none;
+}
+
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
