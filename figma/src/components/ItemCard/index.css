@@ -1,0 +1,36 @@
+.item_card {
+  display: flex;
+  height: 257px;
+  width: 763px;
+  border: 1px solid black;
+}
+
+.item_card_image {
+  height: 250px;
+  width: 352px;
+  border-radius: 23px;
+  padding: 0;
+}
+
+.item_card_button {
+  width: 169px;
+  height: 38px;
+
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 38px;
+
+  color: #009d9d;
+}
+.item_card_text_big {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 20px 0 32px;
+  letter-spacing: 0.20000000298023224px;
+}
+.item_card_text_small {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 32px 0 28px;
+  letter-spacing: 0.20000000298023224px;
+}

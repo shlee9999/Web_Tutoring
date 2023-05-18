@@ -1,0 +1,159 @@
+.header_section {
+  position: relative;
+  width: 1900px;
+  /* overflow-x: hidden; */
+  z-index: -1;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  /* padding: 3px 143px 3px 203px; */
+  gap: 16px;
+
+  position: absolute;
+  width: 1900px;
+  height: 44px;
+  left: 0;
+  top: 0;
+
+  z-index: 9;
+}
+
+.header_items_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 24px;
+  margin-right: 143px;
+  width: 128.59px;
+  height: 16.31px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.header_items_facebook {
+  width: 8px;
+  height: 16px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.header_items_twitter {
+  height: 14px;
+  width: 16px;
+  left: 32px;
+  top: 1.1553955078125px;
+  border-radius: 0px;
+}
+.header_items_in {
+  height: 16.310821533203125px;
+  width: 16.311147689819336px;
+  left: 72px;
+  top: 0px;
+  border-radius: 0px;
+}
+.header_items_instagram {
+  height: 16.278839111328125px;
+  width: 16.275733947753906px;
+  left: 112.3111572265625px;
+  top: 0.0159912109375px;
+  border-radius: 0px;
+}
+.header_section_logo {
+  position: absolute;
+  width: 631px;
+  height: 131px;
+  left: 124px;
+  top: 85px;
+  z-index: 9;
+}
+.header_section_hamburger {
+  position: absolute;
+  width: 55px;
+  height: 37px;
+  left: 1715px;
+  top: 114px;
+}
+.header_section_background_image {
+  height: 1079px;
+  width: 1900px;
+}
+
+.header_section_mask {
+  position: absolute;
+  width: 1900px;
+  height: 1079px;
+  left: 0;
+  top: 0;
+}
+
+.header_section_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 9px 27px 9px 9px;
+  text-transform: uppercase;
+
+  position: absolute;
+  width: 653px;
+  height: 372px;
+  left: 962px;
+  top: 395px;
+
+  background: rgba(0, 0, 0, 0.54);
+  border-radius: 39px;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: right;
+
+  color: white;
+}
+
+.header_section_text_big {
+  width: 525px;
+  height: 186px;
+
+  font-size: 45px;
+  line-height: 62px;
+  /* or 138% */
+
+  text-align: right;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.header_section_text_small {
+  width: 576px;
+  height: 120px;
+
+  font-size: 22px;
+  line-height: 40px;
+  /* or 182% */
+
+  text-align: right;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
