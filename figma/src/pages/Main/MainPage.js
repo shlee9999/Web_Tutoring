@@ -3,6 +3,7 @@ import React from 'react';
 import { HeaderSection } from './components/HeaderSection';
 import { MainSection } from './components/MainSection';
 import { FooterSection } from './components/FooterSection';
+import './index.css';
 export const MainPage = () => {
   return (
     <div className='main_page'>

@@ -1,15 +1,15 @@
 .item_card {
   display: flex;
   height: 257px;
-  width: 763px;
-  border: 1px solid black;
+  width: 49vw;
+  /* border: 1px solid black; */
 }
 
 .item_card_image {
   height: 250px;
   width: 352px;
   border-radius: 23px;
-  padding: 0;
+  /* padding: 0; */
 }
 
 .item_card_button {
@@ -26,11 +26,11 @@
   font-size: 28px;
   font-weight: 700;
   margin: 20px 0 32px;
-  letter-spacing: 0.20000000298023224px;
+  letter-spacing: 0.2px;
 }
 .item_card_text_small {
   font-size: 16px;
   font-weight: 300;
   margin: 32px 0 28px;
-  letter-spacing: 0.20000000298023224px;
+  letter-spacing: 0.2px;
 }

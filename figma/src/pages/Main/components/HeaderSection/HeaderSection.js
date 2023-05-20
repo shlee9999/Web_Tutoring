@@ -26,6 +26,8 @@ export const HeaderSection = () => {
           />
         </div>
       </header>
+      <img src={Mask} className='header_section_mask' alt='header_mask' />
+
       <img
         className='header_section_logo'
         src={HeaderLogo}
@@ -41,12 +43,11 @@ export const HeaderSection = () => {
         alt='header_section_image'
         className='header_section_background_image'
       />
-      <img src={Mask} className='header_section_mask' alt='header_mask' />
-      <div className='header_section_text'>
-        <div className='header_section_text_big'>
+      <div className='header_section_typo'>
+        <div className='header_section_typo_big'>
           The digital revolution is far more significant
         </div>
-        <div className='header_section_text_small'>
+        <div className='header_section_typo_small'>
           than the invention of writing or even of printing. – Douglas
           Engelbart, inventor of the graphical interface and the mouse
         </div>

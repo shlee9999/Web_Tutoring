@@ -1,27 +1,27 @@
 .main_section {
-  width: 1900px;
+  width: 100vw;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.main_section_title_1 {
-  border-radius: 0px;
+
+.main_section_upper_title {
   text-align: center;
   line-height: 87px;
   font-size: 39px;
   font-weight: 700;
-  letter-spacing: 0.20000000298023224px;
+  letter-spacing: 0.2px;
   color: #847878;
   margin: 36px 0 103px;
 }
-.main_section_title_2 {
-  border-radius: 0px;
+.main_section_lower_title {
   text-align: center;
   line-height: 87px;
   font-size: 39px;
   font-weight: 700;
-  letter-spacing: 0.20000000298023224px;
+  letter-spacing: 0.2px;
   color: #847878;
   margin: 138px 0 74px;
 }
@@ -30,10 +30,8 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  border: 1px solid black;
-  padding: 0px;
-  gap: 19px;
-  width: 1575px;
+  gap: 1vw;
+  width: 100vw;
 }
 
 .offer::after {
@@ -45,24 +43,25 @@
   content: 'Full-Service';
   color: #fec83d;
 }
-.description_1 {
+
+.description_upper {
   height: 144px;
-  width: 643px;
+  width: 48vw;
   font-size: 20px;
   font-weight: 300;
   line-height: 36px;
-  letter-spacing: 0.20000000298023224px;
+  letter-spacing: 0.2px;
 }
-.description_2 {
+.description_lower {
   height: 76px;
-  width: 691px;
+  width: 52vw;
   font-size: 30px;
   font-weight: 700;
   line-height: 36px;
-  letter-spacing: 0.20000000298023224px;
+  letter-spacing: 0.2px;
   margin: 69px 0 26px;
 }
-.description_2::after {
+.description_upper::after {
   content: 'Always striving toward ideals. Being true to our values. Clients and beyond.';
   font-size: 20px;
   font-weight: 300;
@@ -73,15 +72,15 @@
   width: 731px;
 }
 .contents_container {
-  width: 1554px;
+  width: 90vw; /*안하면 가운데 정렬 안돰*/
   display: flex;
-  column-gap: 109px;
+  column-gap: 2vw;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 799px;
+  height: 100vh;
+  justify-content: center;
 }
 
 .content_image {
-  height: 772px;
-  width: 714px;
+  width: 36vw;
 }

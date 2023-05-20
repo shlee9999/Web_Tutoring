@@ -4,7 +4,7 @@ import Image from '../../assets/Images/ItemCards/image_1.png';
 export const ItemCard = () => {
   return (
     <div className='item_card'>
-      <img src={Image} alt='image' className='item_card_image' />
+      <img src={Image} alt='item_card' className='item_card_image' />
       <div className='item_card_text'>
         <div className='item_card_text_big'>Logo Design</div>
         <div className='item_card_text_small'>
