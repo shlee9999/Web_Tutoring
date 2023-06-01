@@ -16,6 +16,7 @@
   color: #847878;
   margin: 36px 0 103px;
 }
+
 .main_section_lower_title {
   text-align: center;
   line-height: 87px;
@@ -83,4 +84,72 @@
 
 .content_image {
   width: 36vw;
+}
+
+.input_container {
+  position: relative;
+  gap: 230px;
+  width: 90vw;
+  height: 422px;
+  background: #efeff1;
+  box-shadow: 0px 4px 64px rgba(0, 0, 0, 0.1);
+  border-radius: 35px;
+}
+
+.input_description_wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(0, -50%);
+  /* border: 1px solid black; */
+  border-radius: 19px;
+}
+.email_input_wrapper {
+  position: relative;
+  height: 60px;
+  width: 35vw;
+  border-radius: 5px;
+  /* border: 2px solid red; */
+}
+.email_input {
+  /* input과 wrapper을 동일한 크기로 하니까 버튼 크기가 안맞춰지는 문제가 발생했습니다. 일반적인 처리 방법을 알고 싶습니다 */
+  background: white;
+  border: 1px solid #e6e6e6;
+  border-radius: 20px;
+  height: 55px;
+  width: 33vw;
+  padding-left: 20px;
+}
+.subscribe_button {
+  position: absolute;
+  width: 100px;
+  height: inherit;
+  bottom: 0;
+  left: 70%;
+  background: #fec83d;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.input_description_upper {
+  /* font-family: AvertaW01-Semibold; */
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.input_description_lower {
+  /* font-family: 'Averta Demo PE Cutted Demo'; */
+  font-size: 16px;
+  line-height: 140%;
+  color: #858585;
+}
+
+.bench_image {
+  position: absolute;
+  height: inherit;
+  left: 0;
+  border-radius: inherit;
 }

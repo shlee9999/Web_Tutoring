@@ -1,12 +1,12 @@
 import './index.css';
-import HeaderImage from './Images/Header.png';
-import Mask from './Images/Mask.png';
-import HeaderLogo from './Images/HeaderLogo.png';
-import Hamburger from './Images/Hamburger.png';
-import Facebook from './Images/HeaderItems/Facebook.png';
-import Instagram from './Images/HeaderItems/Instagram.png';
-import Twitter from './Images/HeaderItems/Twitter.png';
-import In from './Images/HeaderItems/in.png';
+import HeaderImage from 'assets/Images/Header.png';
+import Mask from 'assets/Images/Mask.png';
+import HeaderLogo from 'assets/Images/Logo.png';
+import Hamburger from 'assets/Images/Hamburger.png';
+import Facebook from 'assets/Images/Logos/Facebook.png';
+import Instagram from 'assets/Images/Logos/Instagram.png';
+import Twitter from 'assets/Images/Logos/Twitter.png';
+import In from 'assets/Images/Logos/in.png';
 export const HeaderSection = () => {
   return (
     <div className='header_section'>

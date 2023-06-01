@@ -1,0 +1,91 @@
+.footer_section {
+  position: relative;
+  justify-content: center;
+  width: 100vw;
+  display: flex;
+  padding-top: 60px;
+  height: 50vh;
+  margin-bottom: 120px;
+}
+
+.footer_left_container {
+  position: absolute;
+  top: 0;
+  left: 5vw;
+  height: 100%;
+}
+
+.footer_logo {
+  margin-top: 60px;
+  width: 261px;
+}
+
+.footer_subscribe_wrapper {
+  position: absolute;
+  /* border: 1px solid purple; */
+  height: fit-content;
+  left: 0;
+  bottom: 0;
+}
+.footer_subscribe_typo {
+  /* font-family: DM Sans; */
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 29px;
+  letter-spacing: -0.3px;
+}
+.footer_center_container {
+  margin: 0 auto;
+  display: flex;
+  column-gap: 12vw;
+}
+
+.footer_navigation_title {
+  /* font-family: DM Sans; */
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.23px;
+  text-align: left;
+  color: #c84b04;
+}
+
+.footer_navigation_items {
+  /* font-family: DM Sans; */
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.2px;
+  text-align: left;
+}
+
+.footer_email_input {
+  width: 289px; /*Main의 input과 마찬가지로 버튼 크기와 input 크기가 왜 안맞는지 모르겠어요*/
+  height: 50px;
+  border: none;
+}
+.footer_submit_button {
+  position: absolute;
+  bottom: 0; /*top:0으로하면 크기 안맞음?*/
+  right: 0;
+  height: 50px;
+  width: 50px;
+  background: #fec83d;
+  border: none;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.footer_email_input_wrapper {
+  position: relative;
+  display: flex;
+  border-bottom: 0.5px solid #979797;
+}
+
+.footer_navigation_icons_container {
+  border: 2px solid red;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.footer_navigation_icons {
+  height: 16px;
+  width: 8px;
+}
